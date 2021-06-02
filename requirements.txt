@@ -1,0 +1,8 @@
+matplotlib
+wandb
+numpy
+torch
+torchvision
+opencv-python
+gym
+atari-py

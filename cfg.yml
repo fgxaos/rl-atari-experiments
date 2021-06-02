@@ -1,0 +1,40 @@
+### GLOBAL VARIABLES ###
+## Name of the gym environment to use
+# ['Freeway-v0', 'Skiing-v0', 'MsPacman-v0']
+env: 'MsPacman-v0'
+## Name of the model to use
+# ['dqn', 'mnfdqn']
+model: 'mnfdqn'
+
+### DQN VARIABLES ###
+dqn:
+  n_episodes: 40000000  # total number of episodes
+  batch_size: 1024      # batch size to update the model
+  lr: 0.001             # learning rate
+  gamma: 0.999          # discount factor
+  eps_start: 1          # initial value for epsilon
+  eps_end: 0.02         # minimum value for epsilon
+  eps_decay: 1000000    # decay rate of epsilon
+  target_update: 50000  # update frequency of the target model 
+  initial_memory: 50000 # size of the replay buffer
+  train_render: False   # whether to display the screen during training
+  test_render: False    # whether to display the screen during testing
+
+### MNF-DQN VARIABLES ###
+mnfdqn:
+  n_episodes: 40000000         # total number of episodes
+  batch_size: 1024             # batch size to update the model
+  lr: 0.0001                   # learning rate
+  discount: 0.999              # discount factor
+  double_q: False              # whether to use DDQN
+  alpha: 50.0                  # tradeoff between log-likelihood cost and regularization cost
+  replay_buffer_size: 10000000 # size of the replay buffer
+  hidden_dim: 100              # number of hidden units for each step of the flow
+  n_hidden: 1                  # number of hidden modules in each NVP flow
+  n_flows_q: 3                 # number of flow steps for $q_{\phi}$
+  n_flows_r: 3                 # number of flow steps for $r_{\theta}$
+  model: "mnfdqn_model"        # name to use when saving the model
+  target_update_freq: 50000    # update frequency of the target model
+  learning_starts: 10000       # number of steps in the exploration phase
+  learning_freq: 10            # update frequency 
+  render: False                # whether to display the screen during training/testing

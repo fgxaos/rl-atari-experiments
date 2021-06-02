@@ -1,0 +1,6 @@
+# Ignore generated videos
+videos
+# Ignore cache files
+*.pyc
+# Ignore wandb files
+wandb
