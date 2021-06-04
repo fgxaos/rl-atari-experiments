@@ -10,7 +10,7 @@ from models.mnfdqn.mnfdqn_agent import MNFDQNAgent
 
 ### UTILS FUNCTION ###
 def run_experiment(cfg):
-    wandb.init(project="cs-rl-experiments", config=cfg)
+    wandb.init(project="rl-atari-experiments", config=cfg)
 
     if cfg["model"] == "dqn":
         DQNAgent(
