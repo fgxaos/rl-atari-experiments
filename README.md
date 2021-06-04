@@ -26,6 +26,8 @@ This should print out the names of ROMs as it imports them.  The ROMs will be co
 python main.py
 ```
 
+_Note: in our experiments we used only three Atari environments (`Freeway-v0`, `Skiing-v0`, `MsPacman-v0`); but it is possible to run an experiment with any other Atari game (as long as it is available in the gym environment)._
+
 ## References
 In this project, we used:
 - some functions from [OpenAI's baselines](https://github.com/openai/baselines);
